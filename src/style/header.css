@@ -1,0 +1,48 @@
+body{
+  background-color: #F8F8FF;
+  user-select:none;
+}
+
+.navbar{
+  z-index: 20;
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  max-width: 100%;
+}
+
+
+.navbar-brand{
+  color: #3183FF;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.out{
+  position: absolute;
+  right:14%;
+}
+
+.nav-link{
+  color: #AECFFF;
+}
+
+.nav-link:hover{
+  color: #3183FF;
+}
+.nav-link:focus{
+  color: #3183FF;
+}
+
+.footer{
+  position: absolute;
+  bottom: -160%;
+  width:100%;
+  background-color:#000 ;
+}
+
+.f-img{
+  width: 100%;
+}
