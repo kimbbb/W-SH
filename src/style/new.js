@@ -47,12 +47,32 @@ export const left=styled.div`
 
 export const imguplode=styled.div`
   width:288px;
-  height:300px;
-  background-color:#828282;
+  height:310px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#fff;
+  border:none;
   position:absolute;
   right:0%;
-  top:13%;
+  top:40%;
+  transform:translate(0%,-50%);
+  border-radius:10px;
 `
+
+export const addtext = styled.p`
+  color:#c9c9c9;
+`
+
+export const preview = styled.img`
+  max-width:100%;
+  max-height:100%;
+`
+
+export const fileuplode=styled.input`
+  display:none;
+`
+
 
 export const right=styled.div`
   width:64%;
@@ -75,7 +95,7 @@ export const title=styled.input`
   border-radius:10px;
   padding:20px;
   border:none;
-  margin-bottom:20px;
+  margin-bottom:24px;
   &:focus{
     outline:none;
     background-color:#ECF3FD;
@@ -91,7 +111,7 @@ export const op=styled.div`
   border-radius:10px;
   padding:0px 20px;
   background-color:#fff;
-  margin-bottom:20px;
+  margin-bottom:24px;
 `
 
 export const select = styled.select`

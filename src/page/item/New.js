@@ -1,8 +1,30 @@
+import { useState } from "react";
 import * as N from "../../style/new.js"
 import Header from "../components/Header.js";
+import $ from "jquery"
 
 
 function New(){
+
+  const[imgSrc, setImgSrc]=useState('');
+
+  const preview = (file)=>{
+    const render = new FileReader();
+    render.readAsDataURL(file);
+    return new Promise((resolve)=>{
+      render.onload=()=>{
+        setImgSrc(render.result);
+        resolve();
+      };
+    });
+  };
+
+  if(imgSrc!=''){
+    console.log(imgSrc)
+    $('#add').css('display', 'none')
+  }
+
+
   return(
     <>
       <Header/>
@@ -11,7 +33,13 @@ function New(){
           <N.header>CREATE WISHLIST</N.header>
           <N.sbox>
             <N.left>
-              <N.imguplode/>
+              <N.imguplode id='preview' onClick={()=>{
+                  $('#file').click();
+                }}>
+                  {imgSrc && <N.preview src={imgSrc} alt='preview-img'/>}
+                  <N.addtext id='add'>사진 추가</N.addtext>
+              </N.imguplode>
+                <N.fileuplode id="file" type='file' accept="image/*" onChange={(e)=>{preview(e.target.files[0])}}/>
             </N.left>
             <N.right>
               <N.rbox>

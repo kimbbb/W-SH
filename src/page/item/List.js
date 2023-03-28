@@ -1,10 +1,12 @@
 import Header from '../components/Header.js';
 import * as C from "../../style/list.js"
+import Button from "../components/Button"
 
 function List(){
   return(
     <>
     <Header/>
+    <Button/>
     <C.cardbox>
       <C.card>
         <C.top/>
