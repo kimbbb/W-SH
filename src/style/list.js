@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Close from "../images/close.png"
 
 export const cardbox = styled.div`
   position: absolute;
@@ -75,4 +76,139 @@ export const detailbtn=styled.button`
   margin-left: 54%;
   color:#fff;
   font-weight:600;
+`
+
+export const detailbox=styled.div`
+  width:100%;
+  height:92.4vh;
+  background-color: rgb(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  position:absolute;
+  bottom:0%;
+  display:none;
+`
+
+export const detail = styled.div`
+  width:30%;
+  height:72%;
+  background-color:#fff;
+  border-radius:20px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+`
+
+export const header=styled.div`
+  width:100%;
+  height:14%;
+  border-bottom:1px solid #000;
+  display: flex;
+  align-items:center;
+  justify-content:space-between;
+`
+
+export const headtitle = styled.div`
+  display: flex;
+  font-size: 22px;
+  margin: 20px;
+  align-items: center;
+`
+
+export const headcolor = styled.div`
+  width:22px;
+  height:22px;
+  border-radius:100%;
+  background-color:#AECFFF;
+  margin-left:8px;
+`
+
+export const closebtn = styled.button`
+  background-image:url(${Close}); 
+  width:30px;
+  height:30px;
+  border:none;
+  background-color:rgba(255,255,255,0);
+  margin: 20px;
+`
+
+export const dbottom = styled.div`
+  width:100%;
+  height:86%;
+  position: relative;
+`
+
+export const blist = styled.div`
+  width:80%;
+  height:90%;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+`
+
+export const saleimg = styled.div`
+  width:100%;
+  height:60%;
+  background-color:#EDEDED;
+  border-radius:10px;
+`
+
+export const headlist = styled.div`
+  display:flex;
+  width:100%;
+  height:14%;
+  justify-content: space-between;
+  margin-top:30px;
+`
+
+export const headcash = styled.div`
+  width:40%;
+  height:100%;
+  background-color:#EDEDED;
+  color:#828282;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`
+export const headneed = styled.div`
+  width:55%;
+  height:100%;
+  background-color:#EDEDED;
+  color:#828282;
+  border-radius:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+export const percentage = styled.div`
+  width:70%;
+  height:6px;
+  border-radius:10px;
+  background-color: #D9D9D9;
+  margin-left:10px;
+`
+
+export const percent = styled.div`
+  width:80%;
+  height:100%;
+  background-color:#80B2FF;
+  border-radius:10px;
+`
+
+export const del = styled.div`
+  width:34%;
+  height:12%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:18px;
+  margin-top:20px;
+  background-color:#3183FF;
+  border-radius:10px;
+  position:absolute;
+  bottom:0%;
+  right:0%;
 `

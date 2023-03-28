@@ -22,6 +22,7 @@ export const box = styled.div`
   `
   export const banner = styled.div`
     background-image: url(${Banner});
+    cursor:pointer;
     width: 100%;
     height: 150px;
     margin-top:30px;
