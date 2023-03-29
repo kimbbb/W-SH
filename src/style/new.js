@@ -147,7 +147,7 @@ export const push = styled.button`
   background-color:#3183FF;
   color:#fff;
   border:none;
-  border-radius:20px;
+  border-radius:10px;
   margin-left:350px;
   font-size:18px;
   &:focus{

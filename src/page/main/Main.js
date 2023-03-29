@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 function Main() {
 
-  let navigate = ''
+  let navigate = 'https://boom-repair-1d9.notion.site/W-SH-346a43ffec4f4ca3be419753355c0fed'
 
   return (    
     <>

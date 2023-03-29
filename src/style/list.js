@@ -81,7 +81,7 @@ export const detailbtn=styled.button`
 export const detailbox=styled.div`
   width:100%;
   height:92.4vh;
-  background-color: rgb(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   position:absolute;
   bottom:0%;
@@ -91,6 +91,7 @@ export const detailbox=styled.div`
 export const detail = styled.div`
   width:30%;
   height:72%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   background-color:#fff;
   border-radius:20px;
   position:absolute;
