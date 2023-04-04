@@ -2,6 +2,7 @@ import Header from '../components/Header.js';
 import * as C from "../../style/list.js"
 import Button from "../components/Button"
 import $ from "jquery"
+import lightimg from "../../images/light.png"
 
 function List(){
 
@@ -18,6 +19,7 @@ function List(){
     <>
     <Header/>
     <Button/>
+    <C.light src={lightimg}/>
     <C.cardbox>
       <C.card>
         <C.top/>

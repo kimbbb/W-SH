@@ -1,9 +1,16 @@
 import styled from "styled-components"
 import Close from "../images/close.png"
 
+export const light = styled.img`
+  width:120px;
+  position:absolute;
+  top:12%;
+  right:15%;
+`
+
 export const cardbox = styled.div`
   position: absolute;
-  top: 10%;
+  top: 18%;
   left: 51%;
   transform: translate(-50%, 0%);
   width: 70%;
@@ -28,7 +35,7 @@ export const card = styled.div`
   float:left;
   background-color:#fff;
   border-radius:10px;
-  margin:20px ;
+  margin:20px 0px 20px 40px;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.08));
 `
 
