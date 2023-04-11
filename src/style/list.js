@@ -2,7 +2,7 @@ import styled from "styled-components"
 import Close from "../images/close.png"
 
 export const light = styled.img`
-  width:120px;
+  width:150px;
   position:absolute;
   top:12%;
   right:15%;
@@ -10,7 +10,7 @@ export const light = styled.img`
 
 export const cardbox = styled.div`
   position: absolute;
-  top: 18%;
+  top: 20%;
   left: 51%;
   transform: translate(-50%, 0%);
   width: 70%;
