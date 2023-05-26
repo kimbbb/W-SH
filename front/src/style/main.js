@@ -1,36 +1,44 @@
 import styled from "styled-components";
-import Carousel from "../images/carousel.png";
-import Banner from "../images/banner.png"
-import Gide from "../images/gide.png"
 
-export const carousel = styled.div`
-  background-image:url(${Carousel});
+export const mainbox = styled.div`
   width:100%;
-  height: 400px;
+  min-width: 740px;
+  height:100%;
   position: absolute;
   top: 70px;
+  margin-bottom:100px;
+
 `
 
+export const carousel = styled.div`
+  width:100%;
+  margin-bottom:30px;
+`
+
+export const carouselimg = styled.img`
+  width:100%;
+`
 
 export const box = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  width: 1350px;
-  height: 1800px;
-  top: 50%;
+  margin:auto;
+  margin-bottom:70px;
+  width: 64%;
   `
   export const banner = styled.div`
-    background-image: url(${Banner});
     cursor:pointer;
     width: 100%;
-    height: 150px;
-    margin-top:30px;
+    margin-top:60px;
+  `
+
+  export const bnnerimg = styled.img`
+    width:100%;
   `
 
 export const gide = styled.div`
-  background-image:url(${Gide});
   width:100%;
-  height: 1398px;
   margin-top:80px;
+`
+
+export const gideimg = styled.img`
+  width:100%;
 `

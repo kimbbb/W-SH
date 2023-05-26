@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as L from "../../style/login";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import lbg from "../../images/login.png"
 
 function Login() {
   let navigate=useNavigate();
@@ -9,6 +10,7 @@ function Login() {
   let [password, setPassword]=useState();
   return (
     <L.bg>
+      <L.bimg src={lbg}/>
       <L.box>
         <L.user>
           <L.logo>LOGIN</L.logo>

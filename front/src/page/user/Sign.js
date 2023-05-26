@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import * as L from "../../style/login";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import lbg from "../../images/login.png"
 
 function Sign() {
   let navigate=useNavigate();
@@ -16,6 +17,7 @@ function Sign() {
 
   return (
     <L.bg>
+      <L.bimg src={lbg}/>
       <L.box>
         <L.user>
           <L.logo>SIGN UP</L.logo>

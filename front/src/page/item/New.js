@@ -2,11 +2,19 @@ import { useState } from "react";
 import * as N from "../../style/new.js"
 import Header from "../components/Header.js";
 import $ from "jquery"
+import { useNavigation } from "react-router-dom";
 
 
 function New(){
 
+  let navigation = useNavigation
+
   const[imgSrc, setImgSrc]=useState('');
+  const [title, setTitle]=useState();
+  const [cash, setCash]=useState();
+  const [state, setState]=useState('필요한 것');
+  const [need, setNeed]=useState();
+
 
   const preview = (file)=>{
     const render = new FileReader();
@@ -20,7 +28,6 @@ function New(){
   };
 
   if(imgSrc!=''){
-    console.log(imgSrc)
     $('#add').css('display', 'none')
   }
 
@@ -43,10 +50,10 @@ function New(){
             </N.left>
             <N.right>
               <N.rbox>
-                <N.title placeholder="제목"/>
-                <N.title placeholder="가격" type='number' min="1"/>
+                <N.title placeholder="제목" onChange={(e)=>{setTitle(e.target.value)}}/>
+                <N.title placeholder="가격" type='number' min="1" onChange={(e)=>{setCash(e.target.value)}}/>
                 <N.op>상태
-                  <N.select>
+                  <N.select onChange={(e)=>{setState(e.target.value)}}>
                     <N.item>필요한 것</N.item>
                     <N.item>갖고싶은 것</N.item>
                     <N.item>관심있는 것</N.item>
@@ -54,10 +61,13 @@ function New(){
                 </N.op>
 
                 <N.op>필요도
-                  <N.need placeholder="필요도를 설정해주세요" type='number' min="1"></N.need>
+                  <N.need placeholder="필요도를 설정해주세요" type='number' min="1" onChange={(e)=>{setNeed(e.target.value)}}></N.need>
                 </N.op>
 
-                <N.push>Send</N.push>
+                <N.push  onClick={()=>{
+                  console.log(title, cash, state, need)
+                  console.log(imgSrc)
+                }}>Send</N.push>
               </N.rbox>
             </N.right>
           </N.sbox>

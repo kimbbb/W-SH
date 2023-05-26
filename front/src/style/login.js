@@ -2,9 +2,14 @@ import styled from "styled-components"
 import lbg from "../images/login.png"
 
 export const bg=styled.div`
-  background-image:url(${lbg});
+  /* background-image:url(${lbg}); */
   width:100%;
   height:100vh;
+`
+
+export const bimg = styled.img`
+  width:100%;
+  height:100%;
 `
 
 export const box=styled.div`
