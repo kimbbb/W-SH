@@ -2,7 +2,7 @@ import * as C from "../../style/list.js"
 import $ from "jquery"
 
 function Detail() {
-  
+
   function close(){
     $('#modal').css('display', 'none')
   }
@@ -30,7 +30,7 @@ function Detail() {
                 </C.percentage>
               </C.headneed>
             </C.headlist>
-            <C.del>Delete</C.del>
+            <C.del onClick={()=>{}}>Delete</C.del>
           </C.blist>
         </C.dbottom>
       </C.detail>
