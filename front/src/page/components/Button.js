@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 const BtnBox=styled.div`
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: 2%;
+  bottom: 2%;
   &:hover .hover{
     display:block;
   }

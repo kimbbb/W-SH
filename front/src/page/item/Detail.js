@@ -1,18 +1,24 @@
 import * as C from "../../style/list.js"
 import $ from "jquery"
 
-function Detail() {
+function Detail(title, cash, percent) {
 
   function close(){
     $('#modal').css('display', 'none')
   }
+
+  $('#wish').text(title)
+  $('#monnay').text(`₩ ${cash}`)
+  $('#per').text(percent)
+  $('#percent').css('width', `${percent}%`)
 
   return(
     <>
      <C.detailbox id='modal' onClick={()=>{close()}}>
       <C.detail>
         <C.header>
-          <C.headtitle>WISHLIST 제목
+          <C.headtitle>
+            <C.headname id='wish'>WISHLIST 제목</C.headname>
             <C.headcolor/>
           </C.headtitle>
           <C.closebtn onClick={()=>{close()}}/>
@@ -22,11 +28,11 @@ function Detail() {
           <C.blist>
             <C.saleimg/>
             <C.headlist>
-              <C.headcash>₩ 18510</C.headcash>
+              <C.headcash id='monnay'>18510</C.headcash>
               <C.headneed>
-                80
+                <C.percenttext id='per'>80</C.percenttext>
                 <C.percentage>
-                  <C.percent/>
+                  <C.percent id='percent'/>
                 </C.percentage>
               </C.headneed>
             </C.headlist>

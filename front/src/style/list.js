@@ -4,16 +4,16 @@ import Close from "../images/close.png"
 export const light = styled.img`
   width:150px;
   position:absolute;
-  top:12%;
-  right:15%;
+  top:10%;
+  right:14%;
 `
 
 export const cardbox = styled.div`
   position: absolute;
-  top: 20%;
-  left: 51%;
+  top: 18%;
+  left: 52%;
   transform: translate(-50%, 0%);
-  width: 70%;
+  width: 67%;
   height: 80%;
   overflow:auto;
   &::-webkit-scrollbar {
@@ -30,12 +30,12 @@ export const cardbox = styled.div`
 `
 
 export const card = styled.div`
-  width:220px;
+  width:230px;
   height:280px;
   float:left;
   background-color:#fff;
   border-radius:10px;
-  margin:20px 0px 20px 40px;
+  margin:10px 0px 40px 46px;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.08));
 `
 
@@ -97,7 +97,9 @@ export const detailbox=styled.div`
 
 export const detail = styled.div`
   width:30%;
+  min-width:550px;
   height:72%;
+  min-height:650px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
   background-color:#fff;
   border-radius:20px;
@@ -121,6 +123,11 @@ export const headtitle = styled.div`
   font-size: 22px;
   margin: 20px;
   align-items: center;
+`
+
+export const headname = styled.h5`
+  font-size:22px;
+  margin:0px;
 `
 
 export const headcolor = styled.div`
@@ -189,6 +196,10 @@ export const headneed = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`
+
+export const percenttext = styled.p`
+margin:0;
 `
 export const percentage = styled.div`
   width:70%;

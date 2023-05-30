@@ -3,11 +3,12 @@ import * as N from "../../style/new.js"
 import Header from "../components/Header.js";
 import $ from "jquery"
 import { useNavigation } from "react-router-dom";
+import axios from "axios";
 
 
 function New(){
 
-  let navigation = useNavigation
+  let navigate = useNavigation
 
   const[imgSrc, setImgSrc]=useState('');
   const [title, setTitle]=useState();
@@ -65,8 +66,13 @@ function New(){
                 </N.op>
 
                 <N.push  onClick={()=>{
+                  axios
+                  .post('', { title:title, cash:cash, state:state, need:need, img:imgSrc })
+                  .then((result) => {navigate("/list")})
+                  .catch((result)=>{alert('위시 생성을 실패하셨습니다 😥')});
                   console.log(title, cash, state, need)
                   console.log(imgSrc)
+                  
                 }}>Send</N.push>
               </N.rbox>
             </N.right>
