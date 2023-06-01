@@ -25,7 +25,7 @@ function Sign() {
           <L.id type="password" placeholder="비밀번호" onChange={(e)=>{setPassword(e.target.value)}}/>
           <L.go onClick={()=>{
             axios
-            .post('/', {id:id, password:password, type:selected})
+            .post('http://localhost:8081/auth/sign-up', {id:id, password:password, type:selected})
             .then((result)=>{navigate("/")})
             .catch(()=>{alert('회원가입에 실패하셨습니다😥')})
           }}>Sign up</L.go>

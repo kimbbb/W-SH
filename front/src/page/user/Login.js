@@ -19,7 +19,7 @@ function Login() {
           <L.go onClick={()=>{
             console.log(id, password)
             axios
-              .post('/', { id: id, password: password })
+              .post('http://localhost:8081/auth/sign-in', { id: id, password: password })
               .then((result) => {navigate("/main")})
               .catch((result)=>{alert('로그인에 실패하셨습니다 😥')});
             }}>Login</L.go>
