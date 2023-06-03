@@ -2,19 +2,21 @@ import { useState } from "react";
 import * as N from "../../style/new.js"
 import Header from "../components/Header.js";
 import $ from "jquery"
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
 function New(){
 
-  let navigate = useNavigation
+  let navigate=useNavigate();
 
-  const[imgSrc, setImgSrc]=useState('');
-  const [title, setTitle]=useState();
+  const[previewImgSrc, setPreviewImgSrc]=useState('');
+  const [imgSrc, setImgSrc] = useState()
+  const [title, setTitle]=useState('');
   const [cash, setCash]=useState();
   const [state, setState]=useState('필요한 것');
   const [need, setNeed]=useState();
+  const [imgUrl, setImgUrl]=useState('');
 
 
   const preview = (file)=>{
@@ -22,16 +24,37 @@ function New(){
     render.readAsDataURL(file);
     return new Promise((resolve)=>{
       render.onload=()=>{
-        setImgSrc(render.result);
+        setPreviewImgSrc(render.result);
+        setImgSrc(file)
         resolve();
       };
     });
   };
 
-  if(imgSrc!=''){
+
+  if(previewImgSrc!=''){
     $('#add').css('display', 'none')
   }
 
+  const upload = ()=>{
+    const form = new FormData();
+    console.log(imgSrc)
+    form.append("img", imgSrc);
+    for (let key of form.keys()) {
+      console.log(key, ":", form.get(key));
+    }
+
+    axios.post("http://localhost:8081/board/upload/img", form, {"Content-Type": "multipart/form-data"})
+      .then(response => console.log(response))
+      .then(result => {
+        console.log(result);
+        setImgUrl(result);
+        axios.post('http://localhost:8081/board', {title:title, cash:cash, state:state, need:need, img:imgUrl})
+          .then((res)=>{navigate('/list')})
+          .catch((res)=>{alert('위시 생성에 실패하였습니다 😥')})
+      })
+      .catch(error => console.log('error', error));
+  }
 
   return(
     <>
@@ -44,7 +67,7 @@ function New(){
               <N.imguplode id='preview' onClick={()=>{
                   $('#file').click();
                 }}>
-                  {imgSrc && <N.preview src={imgSrc} alt='preview-img'/>}
+                  {previewImgSrc && <N.preview src={previewImgSrc} alt='preview-img'/>}
                   <N.addtext id='add'>사진 추가</N.addtext>
               </N.imguplode>
                 <N.fileuplode id="file" type='file' accept="image/*" onChange={(e)=>{preview(e.target.files[0])}}/>
@@ -65,13 +88,7 @@ function New(){
                   <N.need placeholder="필요도를 설정해주세요" type='number' min="1" onChange={(e)=>{setNeed(e.target.value)}}></N.need>
                 </N.op>
 
-                <N.push  onClick={()=>{
-                  console.log(title, cash, state, need, imgSrc)
-                  axios
-                  .post('http://localhost:8081/board', { title:title, cash:cash, state:state, need:need, img:imgSrc })
-                  .then((result) => {navigate("/list")})
-                  .catch((result)=>{alert('위시 생성을 실패하셨습니다 😥')});
-                }}>Send</N.push>
+                <N.push  onClick={()=>{upload()}}>Send</N.push>
               </N.rbox>
             </N.right>
           </N.sbox>

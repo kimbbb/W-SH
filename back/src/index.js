@@ -2,6 +2,7 @@ import express from "express";
 import authRouter from "./router/authRouter";
 import bodyParser from "body-parser";
 import boardRouter from "./router/BoardRouter";
+import path from "path";
 
 const app = express();
 const PORT = 8081;
@@ -16,6 +17,8 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain)
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/img", express.static(path.join(__dirname, "src/uploads")));
 app.use(bodyParser.json());
 app.use("/auth", authRouter);
 app.use("/board", boardRouter);

@@ -1,13 +1,12 @@
 import connection from "../db";
 
 export const createBoard = async (req, res) => {
-  const { title, cash, state, need } = req.body;
-  console.log(weather);
-  const today = new Date();
+  const { title, cash, state, need, img } = req.body;
+
   try {
     await connection.query(
-      `INSERT INTO board(title, cash, state, need)
-            VALUES("${title}", "${cash}", "${state}", "${need}")`,
+      `INSERT INTO board(title, cash, state, need, img)
+            VALUES("${title}", "${cash}", "${state}", "${need}", "${img}")`,
       (err, result) => {
         if(err) console.log(err);
         return res.status(200).json({
@@ -22,6 +21,10 @@ export const createBoard = async (req, res) => {
     });
   }
 };
+
+export const uploadImage = async (req, res) => {
+  res.json({ url: `/img/${req.file.filename}` });
+}
 
 
 export const getBoard = async (req, res) => {
@@ -81,10 +84,30 @@ export const getBoardList = async (req, res) => {
 export const deleteBoard = async (req, res) => {
   const { id } = req.params;
 
-  console.log(id);
   try {
     await connection.query(
       `delete from board where id=${id};`,
+      (err, result) => {
+        return res.status(204).json({
+          status: 204,
+          message: "삭제되었습니다",
+        });
+      }
+    );
+  } catch (err) {
+    return res.status(500).json({
+      status: 500,
+      message: "서버 오류입니다",
+    });
+  }
+};
+
+export const deleteBoardName = async (req, res) => {
+  const { title } = req.params;
+
+  try {
+    await connection.query(
+      `delete from board where title=${title};`,
       (err, result) => {
         return res.status(204).json({
           status: 204,

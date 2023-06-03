@@ -1,7 +1,12 @@
 import * as C from "../../style/list.js"
 import $ from "jquery"
+import axios from "axios";
+import { useLocation , useNavigate} from "react-router-dom";
 
 function Detail(title, cash, percent) {
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   function close(){
     $('#modal').css('display', 'none')
@@ -36,7 +41,13 @@ function Detail(title, cash, percent) {
                 </C.percentage>
               </C.headneed>
             </C.headlist>
-            <C.del onClick={()=>{}}>Delete</C.del>
+            <C.del onClick={()=>{
+              const title=location.state.id
+              axios
+              .delete(`http://localhost:8081/board/title/${title}`)
+              .then(()=>{alert('위시가 삭제되었습니다😄'); close()})
+            }
+            }>Delete</C.del>
           </C.blist>
         </C.dbottom>
       </C.detail>
