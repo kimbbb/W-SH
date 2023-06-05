@@ -16,7 +16,6 @@ function New(){
   const [cash, setCash]=useState();
   const [state, setState]=useState('필요한 것');
   const [need, setNeed]=useState();
-  const [imgUrl, setImgUrl]=useState('');
 
 
   const preview = (file)=>{
@@ -48,8 +47,7 @@ function New(){
       .then(response => console.log(response))
       .then(result => {
         console.log(result);
-        setImgUrl(result);
-        axios.post('http://localhost:8081/board', {title:title, cash:cash, state:state, need:need, img:imgUrl})
+        axios.post('http://localhost:8081/board', {title:title, cash:cash, state:state, need:need, img:result})
           .then((res)=>{navigate('/list')})
           .catch((res)=>{alert('위시 생성에 실패하였습니다 😥')})
       })
