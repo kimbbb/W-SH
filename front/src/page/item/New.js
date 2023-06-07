@@ -44,15 +44,17 @@ function New(){
     }
 
     axios.post("http://localhost:8081/board/upload/img", form, {"Content-Type": "multipart/form-data"})
-      .then(response => console.log(response))
-      .then(result => {
-        console.log(result);
-        axios.post('http://localhost:8081/board', {title:title, cash:cash, state:state, need:need, img:result})
-          .then((res)=>{navigate('/list')})
-          .catch((res)=>{alert('위시 생성에 실패하였습니다 😥')})
+      .then(response => {
+        console.log(response)
+
+        axios.post('http://localhost:8081/board', {title:title, cash:cash, state:state, need:need, img:response.data.url})
+        .then((res)=>{navigate('/list')})
+        .catch((res)=>{alert('위시 생성에 실패하였습니다 😥')})
+
       })
       .catch(error => console.log('error', error));
   }
+
 
   return(
     <>
@@ -85,8 +87,7 @@ function New(){
                 <N.op>필요도
                   <N.need placeholder="필요도를 설정해주세요" type='number' min="1" onChange={(e)=>{setNeed(e.target.value)}}></N.need>
                 </N.op>
-
-                <N.push  onClick={()=>{upload()}}>Send</N.push>
+                <N.push  onClick={()=>{upload();}}>Send</N.push>
               </N.rbox>
             </N.right>
           </N.sbox>

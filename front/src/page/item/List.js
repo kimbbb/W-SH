@@ -6,7 +6,6 @@ import lightimg from "../../images/light.png"
 import Detail from "./Detail.js"
 
 function List(){
-  const need = 50
 
   function open(){
     $('#modal').css('display', 'block')
@@ -29,12 +28,7 @@ function List(){
             <C.state/>
           </C.titlebox>
           <C.cash id='cash'>가격</C.cash>
-          <C.detailbtn onClick={()=>{
-            const title = document.getElementById('title').innerText
-            const cash = document.getElementById('cash').innerText
-            Detail(title, cash, need )
-            open()
-          }}>GO</C.detailbtn>
+          <C.detailbtn onClick={()=>{open()}}>GO</C.detailbtn>
         </C.bottom>
       </C.card>
       
