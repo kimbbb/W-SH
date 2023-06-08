@@ -67,7 +67,7 @@ function List() {
           return (
             <C.card>
               <C.top>
-                <C.topimg src={board.img} />
+                <C.topimg src={"http://localhost:8081" + board.img} />
               </C.top>
               <C.bottom>
                 <C.titlebox>
@@ -80,7 +80,7 @@ function List() {
                     setCash(board.cash);
                     setState(board.state);
                     setNeed(board.need);
-                    setImg(board.img);
+                    setImg("http://localhost:8081"+board.img);
                     open();
                   }}>
                   GO

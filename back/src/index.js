@@ -17,8 +17,7 @@ var allowCrossDomain = function(req, res, next) {
 
 app.use(allowCrossDomain)
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
-app.use("/img", express.static(path.join(__dirname, "src/uploads")));
+app.use("/img", express.static("src/uploads"))
 app.use(bodyParser.json());
 app.use("/auth", authRouter);
 app.use("/board", boardRouter);
