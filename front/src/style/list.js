@@ -46,6 +46,13 @@ export const top=styled.div`
   border-radius:10px 10px 0px 0px;
 `
 
+export const topimg = styled.img`
+  width:100%;
+  height:100%;
+  border:none;
+  border-radius:10px 10px 0px 0px;
+`
+
 export const bottom=styled.div`
   width:100%;
   height:140px;
@@ -58,14 +65,8 @@ export const titlebox=styled.div`
 `
 
 export const title=styled.h4`
+font-size:22px;
  margin:0px 6px 0px 0px;
-`
-
-export const state=styled.div`
-  width: 20px;
-  height: 20px;
-  background-color:#AECFFF;
-  border-radius:20px;
 `
 
 export const cash=styled.p`
@@ -169,6 +170,12 @@ export const saleimg = styled.div`
   border-radius:10px;
 `
 
+export const sale = styled.img`
+  width:100%;
+  height:100%;
+  border-radius:10px;
+`
+
 export const headlist = styled.div`
   display:flex;
   width:100%;
@@ -230,4 +237,5 @@ export const del = styled.div`
   position:absolute;
   bottom:0%;
   right:0%;
+  cursor: pointer;
 `
