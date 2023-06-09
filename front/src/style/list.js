@@ -14,6 +14,7 @@ export const cardbox = styled.div`
   left: 52%;
   transform: translate(-50%, 0%);
   width: 67%;
+  min-width:640px;
   height: 80%;
   overflow:auto;
   &::-webkit-scrollbar {

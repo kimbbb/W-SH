@@ -85,7 +85,7 @@ function New(){
                 </N.op>
 
                 <N.op>필요도
-                  <N.need placeholder="필요도를 설정해주세요" type='number' min="1" onChange={(e)=>{setNeed(e.target.value)}}></N.need>
+                  <N.need placeholder="필요도를 설정해주세요" type='number' min="1" max="100" onChange={(e)=>{setNeed(e.target.value)}}></N.need>
                 </N.op>
                 <N.push  onClick={()=>{upload();}}>Send</N.push>
               </N.rbox>

@@ -127,13 +127,15 @@ function List() {
               </C.headlist>
               <C.del
                 onClick={() => {
-                  const title = location.state.id;
                   axios
                     .delete(`http://localhost:8081/board/title/${title}`)
                     .then(() => {
                       alert("위시가 삭제되었습니다😄");
                       close();
-                    });
+                    })
+                    .catch((err)=>{
+                      alert('위시가 삭제되지 않았습니다😥')
+                    })
                 }}>
                 Delete
               </C.del>
